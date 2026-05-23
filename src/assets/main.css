@@ -1,3 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply font-sans bg-cerulean-950 text-cornsilk-100 antialiased;
+    min-height: 100dvh;
+  }
+
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-cerulean-700 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-cerulean-600; }
+}
+
+@layer components {
+  /* Field */
+  .field {
+    @apply w-full px-4 py-3 rounded-xl border outline-none transition-all duration-200
+           bg-cerulean-900 border-cerulean-700 text-cornsilk-100 placeholder-ash-grey-500
+           focus:border-ink-black-500 focus:ring-2 focus:ring-ink-black-500/30;
+  }
+
+  /* Btn variants */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl
+           font-semibold text-sm text-cerulean-950 bg-ink-black-400
+           hover:bg-ink-black-300 active:scale-95
+           disabled:opacity-40 disabled:cursor-not-allowed
+           transition-all duration-200 shadow-md shadow-ink-black-900/50;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl
+           font-semibold text-sm text-cornsilk-200 border border-cerulean-700
+           hover:border-ink-black-500 hover:bg-cerulean-800 active:scale-95
+           transition-all duration-200;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl
+           font-semibold text-sm text-red-300 border border-red-900/40
+           hover:bg-red-900/20 active:scale-95 transition-all duration-200;
+  }
+
+  /* Card */
+  .card {
+    @apply bg-cerulean-900 border border-cerulean-800 rounded-2xl;
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold;
+  }
+
+  /* Page wrapper used by all authenticated views */
+  .page {
+    @apply min-h-screen p-6 md:p-10 max-w-7xl mx-auto space-y-8;
+  }
+}

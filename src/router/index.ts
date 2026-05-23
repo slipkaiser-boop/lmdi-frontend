@@ -1,10 +1,10 @@
 // router/index.ts (ou router.js)
 import { createRouter, createWebHistory } from "vue-router";
-import Login from "@/views/auth/Login.vue";
-import Cadastro from "@/views/auth/Cadastro.vue";
+import Login from "@/views/auth/SignInView.vue";
+import Cadastro from "@/views/auth/SignUpView.vue";
 import Home from "@/views/Home.vue";
-import SendEmailReset from "@/views/auth/SendEmailReset.vue";
-import ResetPassword from "@/views/auth/ResetPassword.vue";
+import SendEmailReset from "@/views/auth/ForgotPasswordView.vue";
+import ResetPassword from "@/views/auth/ResetPasswordView.vue";
 import TurmasDashboard from "@/views/TurmasDashboard.vue";
 import Duvidas from "@/views/utils/Duvidas.vue";
 import ModeloProva from "@/views/ModeloProva.vue";
